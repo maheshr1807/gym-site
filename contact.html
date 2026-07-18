@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — FORGE Fitness Studio</title>
+<link rel="stylesheet" href="/style.css">
+<style>
+  .contact-grid{ display:grid; grid-template-columns: 1fr 1.1fr; gap:40px; align-items:start; }
+  @media (max-width:900px){ .contact-grid{ grid-template-columns:1fr; } }
+  .contact-info-item{ display:flex; gap:16px; margin-bottom:22px; }
+  .contact-info-item p{ margin:0; }
+  .map-frame{ border-radius: var(--radius); overflow:hidden; border:1px solid var(--line); }
+  .map-frame iframe{ width:100%; height:340px; border:0; display:block; filter: grayscale(0.3) invert(0.92) contrast(0.9); }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand"><span class="ring plate-marker" style="width:38px;height:38px;font-size:0.7rem;">FG</span><b>FORGE</b>&nbsp;FITNESS</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="trainers.html">Trainers</a>
+      <a href="membership.html">Membership</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+      <a href="membership.html" class="btn btn-gold btn-sm">Join Now</a>
+    </div>
+    <button class="nav-burger" aria-label="Menu"><span></span></button>
+  </div>
+  <div class="container mobile-panel">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="programs.html">Programs</a>
+    <a href="trainers.html">Trainers</a>
+    <a href="membership.html">Membership</a>
+    <a href="schedule.html">Schedule</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html" class="active">Contact</a>
+    <a href="login.html">Login / Register</a>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / <b>Contact</b></div>
+    <h1>Let's Talk</h1>
+    <p style="max-width:520px;">Questions about a plan, a class, or just want to drop by? Reach us however's easiest.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container contact-grid">
+
+    <div class="reveal">
+      <div class="eyebrow">Get In Touch</div>
+      <h2>Visit Or Reach Out</h2>
+
+      <div class="contact-info-item">
+        <div class="plate-marker" style="width:48px;height:48px;font-size:0.7rem;">📍</div>
+        <div><b>Address</b><p>142 Race Course Road, RS Puram, Coimbatore, Tamil Nadu 641002</p></div>
+      </div>
+      <div class="contact-info-item">
+        <div class="plate-marker steel" style="width:48px;height:48px;font-size:0.7rem;">☎</div>
+        <div><b>Phone</b><p><a href="tel:+919876543210">+91 98765 43210</a></p></div>
+      </div>
+      <div class="contact-info-item">
+        <div class="plate-marker" style="width:48px;height:48px;font-size:0.7rem;">✉</div>
+        <div><b>Email</b><p><a href="mailto:hello@forgefitness.in">hello@forgefitness.in</a></p></div>
+      </div>
+      <div class="contact-info-item">
+        <div class="plate-marker steel" style="width:48px;height:48px;font-size:0.7rem;">💬</div>
+        <div><b>WhatsApp</b><p><a href="https://wa.me/919876543210" target="_blank" rel="noopener">Chat with us instantly</a></p></div>
+      </div>
+
+      <div class="social-row" style="justify-content:flex-start;margin-top:26px;">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="Facebook">FB</a>
+        <a href="#" aria-label="YouTube">YT</a>
+      </div>
+
+      <div class="map-frame" style="margin-top:30px;">
+        <iframe loading="lazy" src="https://www.google.com/maps?q=Coimbatore,Tamil+Nadu&output=embed" allowfullscreen title="FORGE Fitness Studio location map"></iframe>
+      </div>
+    </div>
+
+    <div class="card reveal" style="padding:34px;">
+      <h3 style="margin-bottom:20px;">Send Us A Message</h3>
+      <div class="form-success" id="contact-success">Thanks — your message has been sent. We'll get back to you within 24 hours.</div>
+      <form id="contact-form">
+        <div class="field-row">
+          <div class="field"><label for="c-name">Full Name</label><input type="text" id="c-name" required></div>
+          <div class="field"><label for="c-phone">Phone Number</label><input type="tel" id="c-phone" required></div>
+        </div>
+        <div class="field"><label for="c-email">Email Address</label><input type="email" id="c-email" required></div>
+        <div class="field">
+          <label for="c-subject">I'm Interested In</label>
+          <select id="c-subject">
+            <option>General Enquiry</option>
+            <option>Membership Plans</option>
+            <option>Personal Training</option>
+            <option>Facility Tour</option>
+          </select>
+        </div>
+        <div class="field"><label for="c-msg">Message</label><textarea id="c-msg" required></textarea></div>
+        <button type="submit" class="btn btn-gold btn-block">Send Message</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="brand" style="margin-bottom:14px;display:inline-flex;"><span class="ring plate-marker" style="width:38px;height:38px;font-size:0.7rem;">FG</span><b>FORGE</b>&nbsp;FITNESS</a>
+        <p style="max-width:280px;">A strength-first studio in Coimbatore built around coached progress, community, and consistency.</p>
+        <div class="footer-social"><a href="#">IG</a><a href="#">FB</a><a href="#">YT</a></div>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <div class="footer-links">
+          <a href="about.html">About Us</a>
+          <a href="programs.html">Programs</a>
+          <a href="trainers.html">Trainers</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="blog.html">Blog</a>
+        </div>
+      </div>
+      <div>
+        <h4>Account</h4>
+        <div class="footer-links">
+          <a href="membership.html">Membership Plans</a>
+          <a href="schedule.html">Class Schedule</a>
+          <a href="login.html">Login</a>
+          <a href="login.html">Register</a>
+          <a href="dashboard.html">Dashboard</a>
+        </div>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <div class="footer-links">
+          <a href="tel:+919876543210">+91 98765 43210</a>
+          <a href="mailto:hello@forgefitness.in">hello@forgefitness.in</a>
+          <a href="contact.html">Race Course Road, Coimbatore</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 FORGE Fitness Studio. All rights reserved.</p>
+      <p>Built for strength, one rep at a time.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/script.js"></script>
+</body>
+</html>

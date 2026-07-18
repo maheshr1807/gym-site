@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — FORGE Fitness Studio</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand"><span class="ring plate-marker" style="width:38px;height:38px;font-size:0.7rem;">FG</span><b>FORGE</b>&nbsp;FITNESS</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="trainers.html">Trainers</a>
+      <a href="membership.html">Membership</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="dashboard.html" class="btn btn-gold btn-sm">Dashboard</a>
+    </div>
+    <button class="nav-burger" aria-label="Menu"><span></span></button>
+  </div>
+  <div class="container mobile-panel">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="programs.html">Programs</a>
+    <a href="trainers.html">Trainers</a>
+    <a href="membership.html">Membership</a>
+    <a href="schedule.html">Schedule</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+    <a href="dashboard.html" class="active">Dashboard</a>
+  </div>
+</nav>
+
+<div class="container dash">
+
+  <aside class="dash-side">
+    <div class="dash-user">
+      <div class="plate-marker" id="dash-initial">--</div>
+      <div>
+        <b id="dash-name">Loading…</b>
+        <span id="dash-plan">—</span>
+      </div>
+    </div>
+    <div class="dash-nav">
+      <button class="active" data-target="dash-overview">Overview</button>
+      <button data-target="dash-bookings">My Bookings</button>
+      <button data-target="dash-bmi">BMI Tracker</button>
+      <button data-target="dash-membership">Membership</button>
+    </div>
+    <div class="divider" style="margin:20px 0;"></div>
+    <button id="dash-logout" class="btn btn-outline btn-block btn-sm">Log Out</button>
+  </aside>
+
+  <main>
+
+    <div class="dash-panel active" id="dash-overview">
+      <h2>Overview</h2>
+      <p>Here's a snapshot of your FORGE membership.</p>
+      <div class="dash-cards">
+        <div class="dash-card"><div class="num" id="dash-plan-stat">—</div><div class="label">Current Plan</div></div>
+        <div class="dash-card"><div class="num" id="dash-bookings-stat">0</div><div class="label">Upcoming / Total Bookings</div></div>
+        <div class="dash-card"><div class="num" id="dash-joined-stat">—</div><div class="label">Member Since</div></div>
+      </div>
+      <div class="card" style="padding:24px;">
+        <h3 style="font-size:1rem;">Quick Actions</h3>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px;">
+          <a href="schedule.html" class="btn btn-gold btn-sm">Book A Class</a>
+          <a href="membership.html" class="btn btn-outline btn-sm">Upgrade Plan</a>
+          <a href="contact.html" class="btn btn-outline btn-sm">Contact A Trainer</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="dash-panel" id="dash-bookings">
+      <h2>My Bookings</h2>
+      <p>Manage your upcoming and past class bookings. Head to the <a href="schedule.html" style="color:var(--gold);">schedule page</a> to book new classes.</p>
+      <div id="booking-list"></div>
+    </div>
+
+    <div class="dash-panel" id="dash-bmi">
+      <h2>BMI Tracker</h2>
+      <p>Log a quick check-in to track your BMI over time.</p>
+      <div class="two-col" style="align-items:flex-start;">
+        <form id="bmi-form">
+          <div class="field"><label for="bmi-height">Height (cm)</label><input type="number" id="bmi-height" required></div>
+          <div class="field"><label for="bmi-weight">Weight (kg)</label><input type="number" id="bmi-weight" required></div>
+          <button type="submit" class="btn btn-gold btn-block">Calculate BMI</button>
+        </form>
+        <div id="bmi-result" class="bmi-result" style="display:none;"></div>
+      </div>
+    </div>
+
+    <div class="dash-panel" id="dash-membership">
+      <h2>Membership</h2>
+      <p>Your current plan and billing details.</p>
+      <div class="card" style="padding:26px;max-width:420px;">
+        <div class="eyebrow">Active Plan</div>
+        <h3 id="dash-plan-detail" style="margin-bottom:6px;">—</h3>
+        <p style="font-size:0.88rem;">Renews automatically each month. Manage or cancel anytime.</p>
+        <div style="display:flex;gap:12px;margin-top:16px;">
+          <a href="membership.html" class="btn btn-gold btn-sm">Change Plan</a>
+          <button class="btn btn-outline btn-sm">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<footer class="footer" style="margin-top:60px;">
+  <div class="container footer-bottom" style="border-top:none;padding-top:0;">
+    <p>© 2026 FORGE Fitness Studio. All rights reserved.</p>
+    <p>Built for strength, one rep at a time.</p>
+  </div>
+</footer>
+
+<script src="/script.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', ()=>{
+    const check = setInterval(()=>{
+      const el = document.getElementById('dash-plan-stat');
+      if(el && el.textContent !== '—'){
+        document.getElementById('dash-plan-detail').textContent = el.textContent + ' Plan';
+        clearInterval(check);
+      }
+    }, 100);
+  });
+</script>
+</body>
+</html>
